@@ -4,9 +4,13 @@
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let board, // to represent the state of the squares on the board 
-turn, // to track whose turn it is 
-winner // to represent if anyone has won yet, or if its a tie 
+let board, turn, winner
+
+
+
+// to represent the state of the squares on the board 
+// to track whose turn it is 
+ // to represent if anyone has won yet, or if its a tie 
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -25,5 +29,7 @@ console.log(messageEl)
 init()
 
 function init() {
+  board = [null, null, null, null, null, null, null, null, null]
   
+console.log("sanity check")
 }
