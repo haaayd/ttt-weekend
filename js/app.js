@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-
+const players 
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -30,6 +30,11 @@ init()
 
 function init() {
   board = [null, null, null, null, null, null, null, null, null]
-  
-console.log("sanity check")
+  turn = 1 // represents player x 
+  winner = null // null = no winner, 1 = x won, -1 = o won. "T a tie occured, anything else = game over."
+
+
+
+  render()
 }
+
