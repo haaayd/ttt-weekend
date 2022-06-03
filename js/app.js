@@ -30,7 +30,7 @@ const messageEl = document.querySelector("h2")
 
 squareEls.forEach
 squareEls.forEach(square => {
-  square.addEventListener("click", handleClick)
+square.addEventListener("click", handleClick)
   
 });
 // this is 
@@ -72,12 +72,21 @@ function renderMessage() {
 
   }
   function handleClick(evt) {
-  const sqIdx = evt.target.id.substring(2)
+  const sqIdx = parseInt(evt.target.id.substring(2))
     if (board[sqIdx] !== null || winner !== null) {
+      return 
    }
-   return
-   
-    
+   board[sqIdx] = turn
+   console.log()
+   turn = turn * -1
+   getWinner()
+   render()
+  
   }
+
+  function getWinner(){
+
+  }
+  
 
   
