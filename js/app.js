@@ -24,23 +24,28 @@ const squareEls = document.querySelectorAll(".square")
 //console.log(squareEls)
 
 const messageEl = document.querySelector("h2")
+const resetBtnEl = document.querySelector("button")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-squareEls.forEach
+
 squareEls.forEach(square => {
 square.addEventListener("click", handleClick)
+
   
 });
-// this is 
+resetBtnEl.addEventListener("click", function(){
+init()
+})
+
 
 
 /*-------------------------------- Functions --------------------------------*/
 init()
 
 function init() {
-  board = [null, -1, null, null, null, null, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null]
   turn = 1 // represents player x 
   winner = null // null = no winner, 1 = x won, -1 = o won. "T a tie occured, anything else = game over."
   render ()
@@ -55,7 +60,11 @@ function render () {
   } 
    if (square === -1) {
     squareEls[i].textContent = "O"
+  } if (!square) {
+    squareEls[i].textContent = ""
   }
+
+  
   
 })  
   renderMessage()
@@ -84,9 +93,34 @@ function renderMessage() {
   
   }
 
-  function getWinner(){
+  function getWinner(){ 
+    winningCombos.forEach(function(winCombs) { 
+      let sum = board[winCombs[0]] + board[winCombs[1]] + board[winCombs[2]]
+      // if (Math.abs(sum) === 3) {
+      if (sum === 3) {
+        winner = "X"
+      }
+      if (sum === -3) {
+        winner = "O"
+      } else if (board.includes(null)=== false) {
+         winner = "T"
+      
+      }
+      else {
+        return null 
+      }
+      
+      
+      
+
+    })
+
 
   }
   
-
+  // console.log(winnerCom)
+  // console.log(winnerCom[0], "first element in the array")
+  // console.log(board[winnerCom[0]])
+  // console.log(board[winnerCom[1]])
+  // console.log(board[winnerCom[2]])
   
