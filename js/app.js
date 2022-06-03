@@ -16,9 +16,7 @@ let board, turn, winner
 
 
 
-// to represent the state of the squares on the board 
-// to track whose turn it is 
- // to represent if anyone has won yet, or if its a tie 
+
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -30,7 +28,12 @@ const messageEl = document.querySelector("h2")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-
+squareEls.forEach
+squareEls.forEach(square => {
+  square.addEventListener("click", handleClick)
+  
+});
+// this is 
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -68,3 +71,13 @@ function renderMessage() {
 
 
   }
+  function handleClick(evt) {
+  const sqIdx = evt.target.id.substring(2)
+    if (board[sqIdx] !== null || winner !== null) {
+   }
+   return
+   
+    
+  }
+
+  
