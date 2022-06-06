@@ -33,10 +33,9 @@ const resetBtnEl = document.querySelector("button")
 squareEls.forEach(square => {
 square.addEventListener("click", handleClick)
 
-  
 });
-resetBtnEl.addEventListener("click", function(){
-init()
+resetBtnEl.addEventListener("click", init() {
+
 })
 
 
@@ -55,12 +54,13 @@ function init() {
 
 function render () {
   board.forEach((square, i)=> {
-   if (square === 1) {
+    if (square === 1) {
      squareEls[i].textContent = "X"
   } 
-   if (square === -1) {
+    if (square === -1) {
     squareEls[i].textContent = "O"
-  } if (!square) {
+  } 
+    if (!square) {
     squareEls[i].textContent = ""
   }
 
@@ -117,7 +117,7 @@ function renderMessage() {
 
 
   }
-  
+  // if (Math.abs(sum) === 3) {
   // console.log(winnerCom)
   // console.log(winnerCom[0], "first element in the array")
   // console.log(board[winnerCom[0]])
