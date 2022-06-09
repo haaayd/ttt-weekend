@@ -19,7 +19,7 @@ let board, turn, winner
 
 
 
-/*------------------------ Cached Element References ------------------------*/
+/*---------------------------- Variables (state) ----------------------------*/
 const squareEls = document.querySelectorAll(".square")
 //console.log(squareEls)
 
@@ -34,9 +34,7 @@ squareEls.forEach(square => {
 square.addEventListener("click", handleClick)
 
 });
-resetBtnEl.addEventListener("click", init() {
-
-})
+resetBtnEl.addEventListener("click", init)
 
 
 
@@ -73,9 +71,9 @@ function renderMessage() {
   if(winner === null) {
     messageEl.textContent = `It is player ${turn === 1 ? "X": "O"}'s turn!`
   } else if (winner === "T") {
-    messageEl.textContent = `It's a tie`
+    messageEl.textContent = `It's a tie!`
   } else {
-    messageEl.textContent = `Player ${turn === 1 ? "0": "X"} won`
+    messageEl.textContent = `Player ${turn === 1 ? "0": "X"} won !!`
   }
 
 
@@ -117,10 +115,4 @@ function renderMessage() {
 
 
   }
-  // if (Math.abs(sum) === 3) {
-  // console.log(winnerCom)
-  // console.log(winnerCom[0], "first element in the array")
-  // console.log(board[winnerCom[0]])
-  // console.log(board[winnerCom[1]])
-  // console.log(board[winnerCom[2]])
   
